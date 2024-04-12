@@ -1,3 +1,4 @@
+const { TIMEOUT } = require('dns');
 const fs = require('fs');
 const util = require('util');
 
@@ -30,5 +31,27 @@ const readAndAppend = (content, file) => {
     }
   });
 };
+
+const deleteNote = (noteId) => {
+  fs.readFile(file, 'utf8', (err, data) => {
+    if (err) {
+      console.error(err);
+    } else {
+      const parsedData = JSON.parse(data);
+      //Opt1
+      let tempArr =[]
+      parsedData.forEach(element => {
+        if(element.id != noteId) {
+          tempArr.push(element);
+        }
+      });
+
+      //Op2
+      let tempArr = parsedData.map(el => el.id!=noteId);
+
+//op 3(for =0;)
+    }
+
+});
 
 module.exports = { readFromFile, writeToFile, readAndAppend };

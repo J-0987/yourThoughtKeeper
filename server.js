@@ -3,13 +3,15 @@ const apiRoutes = require("./routes/apiNotesRoute");
 const uuid = require("./helpers/uuid");
 const app = express();
 const PORT = process.env.PORT || 3001;
+const path = require("path")
+
 
 // Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
 app.use("/api", apiRoutes);
-app.use("/", htmlRoute);
+
 
 // GET Route for homepage
 app.get('/', (req, res) =>
@@ -26,11 +28,12 @@ app.get('/notes', (req, res) =>
 // catchall endpoint
 
 app.get('*', (req, res) =>
-res.sendFile(path.join(__dirname, '/public/pages/index.html'))
+res.sendFile(path.join(__dirname, '/public/index.html'))
   );
+
 // Start server on port
 app.listen(PORT, function () {
-    console.log(`Listening on PORT ${PORT}`);
+    console.log(`Listening on PORT http://localhost:${PORT}`);
 });
 
 

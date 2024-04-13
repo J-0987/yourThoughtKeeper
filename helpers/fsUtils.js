@@ -31,27 +31,24 @@ const readAndAppend = (content, file) => {
     }
   });
 };
-
-const deleteNote = (noteId) => {
+const deleteNote = (content, file) => {
   fs.readFile(file, 'utf8', (err, data) => {
     if (err) {
       console.error(err);
     } else {
       const parsedData = JSON.parse(data);
-      //Opt1
-      let tempArr =[]
-      parsedData.forEach(element => {
-        if(element.id != noteId) {
-          tempArr.push(element);
-        }
-      });
-
-      //Op2
-      let tempArr = parsedData.map(el => el.id!=noteId);
-
-//op 3(for =0;)
+      parsedData.pop(content);
+      writeToFile(file, parsedData);
     }
+  });
+};
 
-});
 
-module.exports = { readFromFile, writeToFile, readAndAppend };
+
+
+  
+
+
+
+
+module.exports = { readFromFile, writeToFile, readAndAppend, deleteNote };

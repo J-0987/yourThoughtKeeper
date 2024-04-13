@@ -24,13 +24,14 @@ This is a simple note-taking application designed for small business owners to o
 
 ## Features
 
-- Interactive CLI interface powered by Inquirer
-- Generates README files with predefined sections for easy documentation
-- Allows customization of README content based on user input
-- Supports markdown formatting for better readability
+- Landing page with a link to access the notes page.
+- Save Note button and Clear Form button appear upon entering a new note title and text.
+- Ability to save new notes, which then appear in the list of existing notes.
+- Ability to click on existing notes to view and edit them.
+
 
 ## Installation
-To use this note taker you need to have Node.js installed on your system. Follow these steps to get started:
+To use this note taker, simply follow the deployment link provided:
 
 Clone this repository to your local machine:
 
@@ -60,14 +61,14 @@ Follow the prompts to provide information about your project. Once you've comple
 
 ## Visuals
 
-Here is a short video that runs you through the entire process from installation to completion: [click here](https://drive.google.com/file/d/1OIEY6tlkJ8Al5GZfdUwZM3roD7kB2aKZ/view)
 
+Application's main page
 
+(![main page](image.png))
 
+Notes page
 
-Screenshot of the application with prompts and user answers:
-
-![screenshot of cli](./images/image1.png)
+![notes page](image-1.png)
 
 
 ## Contributing
